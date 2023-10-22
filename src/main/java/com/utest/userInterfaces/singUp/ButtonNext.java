@@ -9,5 +9,4 @@ public class ButtonNext {
             .locatedBy("//a[@class='btn btn-blue pull-right']");
 
 
-
 }

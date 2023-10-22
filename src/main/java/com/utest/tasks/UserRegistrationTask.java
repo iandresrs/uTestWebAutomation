@@ -5,11 +5,9 @@ import com.utest.utils.Excel;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import org.codehaus.groovy.runtime.StringGroovyMethods;
 import org.openqa.selenium.Keys;
 
 import java.io.IOException;
@@ -41,7 +39,7 @@ public class UserRegistrationTask implements Task {
 
             String city = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 6);
             String postalCode = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 7);
-            String country = excel.readExcelData(Constant.INFORMATION_SHEET,1,8);
+            String country = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 8);
 
             String computer = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 9);
             String version = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 10);
@@ -50,8 +48,8 @@ public class UserRegistrationTask implements Task {
             String model = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 13);
             String operatingSystem = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 14);
 
-            String password = excel.readExcelData(Constant.INFORMATION_SHEET,1,15);
-            String confirmPassword = excel.readExcelData(Constant.INFORMATION_SHEET,1,16);
+            String password = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 15);
+            String confirmPassword = excel.readExcelData(Constant.INFORMATION_SHEET, 1, 16);
 
             actor.attemptsTo(
                     Click.on(BTN_JOIN_TODAY),
@@ -66,17 +64,14 @@ public class UserRegistrationTask implements Task {
             );
 
             actor.attemptsTo(
-
                     Enter.theValue(city).into(TXT_CITY).thenHit(Keys.ARROW_DOWN, Keys.ENTER),
                     Enter.theValue(postalCode).into(TXT_POSTAL_CODE),
                     Click.on(LST_COUNTRY),
                     Enter.theValue(country).into(TXT_COUNTRY).thenHit(Keys.ARROW_DOWN, Keys.ENTER),
                     Click.on(BTN_NEXT)
-
             );
 
             actor.attemptsTo(
-
                     Click.on(LST_COMPUTER),
                     Enter.theValue(computer).into(TXT_COMPUTER).thenHit(Keys.ARROW_DOWN, Keys.ENTER),
                     Click.on(LST_VERSION),
@@ -90,7 +85,6 @@ public class UserRegistrationTask implements Task {
                     Click.on(LST_OPERATING_SYSTEM),
                     Enter.theValue(operatingSystem).into(TXT_OPERATING_SYSTEM).thenHit(Keys.ARROW_DOWN, Keys.ENTER),
                     Click.on(BTN_NEXT)
-
             );
 
             actor.attemptsTo(

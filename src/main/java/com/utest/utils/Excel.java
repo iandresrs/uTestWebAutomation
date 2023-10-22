@@ -16,7 +16,7 @@ public class Excel implements Closeable {
     private final XSSFWorkbook workbook;
 
     public Excel() throws IOException {
-        FileInputStream file = new FileInputStream(new File("src/main/resources/data/Data.xlsx"));
+        FileInputStream file = new FileInputStream(new File(Constant.PATH));
         workbook = new XSSFWorkbook(file);
     }
 
